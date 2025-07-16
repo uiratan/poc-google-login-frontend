@@ -1,0 +1,13 @@
+<section *ngIf="usuario; else carregando">
+  <h1>Olá, {{ usuario.nome }}!</h1>
+  <img [src]="usuario.pictureUrl" alt="Avatar" width="100" height="100" style="border-radius: 50%" />
+  <p><strong>Email:</strong> {{ usuario.email }}</p>
+  <p><strong>Nome Completo:</strong> {{ usuario.nomeCompleto }}</p>
+  <p><strong>Local:</strong> {{ usuario.locale }}</p>
+  <h1>Bem-vindo ao sistema!</h1>
+  <button (click)="logout()">Logout</button>
+</section>
+
+<ng-template #carregando>
+  <p>Carregando informações do usuário...</p>
+</ng-template>
